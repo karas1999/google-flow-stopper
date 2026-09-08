@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Google Flow Stopper",
+  "version": "1.0.0",
+  "description": "保留 Google Flow 旧版入口，只取消前往 flow.google.com 的导航，继续加载样式和字体。",
+  "minimum_chrome_version": "111",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://labs.google/fx/tools/flow",
+        "https://labs.google/fx/tools/flow/*",
+        "https://labs.google/fx/tools/flow?*",
+        "https://labs.google/fx/*/tools/flow",
+        "https://labs.google/fx/*/tools/flow/*",
+        "https://labs.google/fx/*/tools/flow?*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}
